@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Gratuito | Ansiedade & Inteligência Emocional</title>
+    <meta name="description" content="Entre no nosso grupo gratuito no WhatsApp e receba conteúdos exclusivos sobre ansiedade e inteligência emocional. Transforme sua vida hoje!">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4512638892346985');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=4512638892346985&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #25D366;
+            --primary-dark: #1ebe57;
+            --accent: #7C3AED;
+            --accent-light: #A78BFA;
+            --bg-dark: #0F0F1A;
+            --bg-card: #1A1A2E;
+            --bg-card-hover: #222240;
+            --text-main: #F1F1F6;
+            --text-muted: #A0A0B8;
+            --gradient-1: linear-gradient(135deg, #7C3AED 0%, #3B82F6 50%, #25D366 100%);
+            --gradient-2: linear-gradient(135deg, #7C3AED 0%, #25D366 100%);
+            --shadow-glow: 0 0 40px rgba(124, 58, 237, 0.15), 0 0 80px rgba(37, 211, 102, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animated background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .bg-orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .bg-orb-2 {
+            width: 350px;
+            height: 350px;
+            background: var(--primary);
+            bottom: 10%;
+            left: -80px;
+            animation-delay: -7s;
+        }
+
+        .bg-orb-3 {
+            width: 250px;
+            height: 250px;
+            background: #3B82F6;
+            top: 50%;
+            right: 20%;
+            animation-delay: -14s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(20px, 10px) scale(1.02); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 24px 40px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(124, 58, 237, 0.15);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-light);
+            margin-bottom: 32px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.7); }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero h1 .highlight {
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+            color: var(--text-muted);
+            max-width: 580px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-cta {
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            padding: 18px 40px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 25px rgba(37, 211, 102, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 40px rgba(37, 211, 102, 0.45);
+            background: var(--primary-dark);
+        }
+
+        .cta-btn:hover::before {
+            left: 100%;
+        }
+
+        .cta-btn svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .cta-btn .btn-shake {
+            animation: shake 3s ease-in-out infinite;
+        }
+
+        @keyframes shake {
+            0%, 85%, 100% { transform: rotate(0deg); }
+            87% { transform: rotate(15deg); }
+            89% { transform: rotate(-10deg); }
+            91% { transform: rotate(12deg); }
+            93% { transform: rotate(-8deg); }
+            95% { transform: rotate(5deg); }
+        }
+
+        .members-count {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 24px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+
+        .avatar-stack {
+            display: flex;
+        }
+
+        .avatar-stack span {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid var(--bg-dark);
+            margin-left: -10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .avatar-stack span:first-child { margin-left: 0; }
+        .avatar-stack span:nth-child(1) { background: linear-gradient(135deg, #7C3AED, #A78BFA); }
+        .avatar-stack span:nth-child(2) { background: linear-gradient(135deg, #3B82F6, #60A5FA); }
+        .avatar-stack span:nth-child(3) { background: linear-gradient(135deg, #25D366, #4ADE80); }
+        .avatar-stack span:nth-child(4) { background: linear-gradient(135deg, #F59E0B, #FBBF24); }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            margin-top: 50px;
+            animation: fadeInUp 0.8s ease-out 1s both;
+        }
+
+        .scroll-indicator svg {
+            width: 28px;
+            height: 28px;
+            color: var(--text-muted);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        /* Section styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 500px;
+            margin: 0 auto 50px;
+        }
+
+        /* Problem Section */
+        .problems {
+            background: linear-gradient(180deg, transparent 0%, rgba(124,58,237,0.03) 50%, transparent 100%);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .problem-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 28px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+            border-color: rgba(124,58,237,0.2);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .problem-icon {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .problem-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .problem-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Benefits Section */
+        .benefits-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 22px 24px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(37,211,102,0.2);
+            transform: translateX(6px);
+        }
+
+        .benefit-check {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            background: rgba(37, 211, 102, 0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-top: 2px;
+        }
+
+        .benefit-text h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .benefit-text p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(180deg, transparent 0%, rgba(37,211,102,0.03) 50%, transparent 100%);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(124,58,237,0.2);
+            transform: translateY(-3px);
+        }
+
+        .testimonial-stars {
+            color: #FBBF24;
+            font-size: 0.9rem;
+            margin-bottom: 14px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-card p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin-bottom: 18px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #fff;
+        }
+
+        .testimonial-author-info strong {
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .testimonial-author-info span {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 80px 24px 100px;
+        }
+
+        .final-cta-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(124,58,237,0.15);
+            border-radius: 28px;
+            padding: 50px 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+        }
+
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            margin-bottom: 16px;
+        }
+
+        .final-cta p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 32px;
+            max-width: 440px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .urgency-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            color: #FCA5A5;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 28px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 24px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            opacity: 0.6;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 40px 16px 30px;
+            }
+
+            .cta-btn {
+                font-size: 1.05rem;
+                padding: 16px 32px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .problem-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .final-cta-box {
+                padding: 36px 24px;
+            }
+        }
+
+        /* Floating WhatsApp button */
+        .floating-cta {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 100;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.4s ease;
+            pointer-events: none;
+        }
+
+        .floating-cta.show {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: all;
+        }
+
+        .floating-cta a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .floating-cta a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .floating-cta a svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="badge">
+            <span class="badge-dot"></span>
+            100% Gratuito
+        </div>
+
+        <h1>
+            Domine Sua <span class="highlight">Ansiedade</span> e Desenvolva
+            <span class="highlight">Inteligência Emocional</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            Entre no nosso grupo exclusivo no WhatsApp e receba conteúdos diários que vão te ajudar a controlar a ansiedade, entender suas emoções e viver com mais equilíbrio.
+        </p>
+
+        <div class="hero-cta">
+            <a href="https://chat.whatsapp.com/E3fgrpfOKFk7svgbGW6gjp" class="cta-btn" id="mainCta" onclick="trackJoinClick()">
+                <svg class="btn-shake" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Entrar no Grupo Grátis
+            </a>
+        </div>
+
+        <div class="members-count">
+            <div class="avatar-stack">
+                <span>A</span>
+                <span>M</span>
+                <span>R</span>
+                <span>J</span>
+            </div>
+            <span>+200 pessoas já entraram</span>
+        </div>
+
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems">
+        <div class="container">
+            <h2 class="section-title reveal">Você se identifica?</h2>
+            <p class="section-subtitle reveal">Esses são sinais de que esse grupo foi feito pra você</p>
+
+            <div class="problem-grid">
+                <div class="problem-card reveal">
+                    <span class="problem-icon">😰</span>
+                    <h3>Ansiedade constante</h3>
+                    <p>Pensamentos acelerados e preocupações que não param, mesmo sem motivo aparente</p>
+                </div>
+                <div class="problem-card reveal">
+                    <span class="problem-icon">💤</span>
+                    <h3>Noites mal dormidas</h3>
+                    <p>Dificuldade para dormir porque a mente não desliga e fica remoendo tudo</p>
+                </div>
+                <div class="problem-card reveal">
+                    <span class="problem-icon">😤</span>
+                    <h3>Reações explosivas</h3>
+                    <p>Dificuldade em controlar emoções e acaba reagindo de forma desproporcional</p>
+                </div>
+                <div class="problem-card reveal">
+                    <span class="problem-icon">🧠</span>
+                    <h3>Esgotamento mental</h3>
+                    <p>Sensação de cansaço emocional, sobrecarga e falta de clareza no dia a dia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title reveal">O que você vai receber</h2>
+            <p class="section-subtitle reveal">Conteúdos práticos e transformadores, direto no seu WhatsApp</p>
+
+            <div class="benefits-list">
+                <div class="benefit-item reveal">
+                    <div class="benefit-check">✓</div>
+                    <div class="benefit-text">
+                        <h3>Técnicas para controlar a ansiedade</h3>
+                        <p>Exercícios de respiração, grounding e métodos comprovados pela ciência</p>
+                    </div>
+                </div>
+                <div class="benefit-item reveal">
+                    <div class="benefit-check">✓</div>
+                    <div class="benefit-text">
+                        <h3>Dicas de inteligência emocional</h3>
+                        <p>Aprenda a identificar, entender e gerenciar suas emoções no dia a dia</p>
+                    </div>
+                </div>
+                <div class="benefit-item reveal">
+                    <div class="benefit-check">✓</div>
+                    <div class="benefit-text">
+                        <h3>Conteúdos exclusivos diários</h3>
+                        <p>Reflexões, frases motivacionais e insights que vão mudar sua perspectiva</p>
+                    </div>
+                </div>
+                <div class="benefit-item reveal">
+                    <div class="benefit-check">✓</div>
+                    <div class="benefit-text">
+                        <h3>Comunidade acolhedora</h3>
+                        <p>Um espaço seguro com pessoas que entendem o que você está passando</p>
+                    </div>
+                </div>
+                <div class="benefit-item reveal">
+                    <div class="benefit-check">✓</div>
+                    <div class="benefit-text">
+                        <h3>100% gratuito, sem pegadinha</h3>
+                        <p>Nosso objetivo é ajudar o maior número de pessoas possível</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title reveal">O que dizem os membros</h2>
+            <p class="section-subtitle reveal">Pessoas reais, transformações reais</p>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Entrei no grupo sem expectativa, mas os conteúdos mudaram minha forma de lidar com a ansiedade. Recomendo demais!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #7C3AED, #A78BFA);">C</div>
+                        <div class="testimonial-author-info">
+                            <strong>Camila R.</strong>
+                            <span>Membro há 3 meses</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"As técnicas de respiração que compartilham são incríveis. Já consigo dormir muito melhor. Gratidão por esse grupo!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #3B82F6, #60A5FA);">L</div>
+                        <div class="testimonial-author-info">
+                            <strong>Lucas M.</strong>
+                            <span>Membro há 2 meses</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Me sinto acolhida nesse grupo. Os conteúdos sobre inteligência emocional me ajudaram muito no trabalho e na família."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #25D366, #4ADE80);">A</div>
+                        <div class="testimonial-author-info">
+                            <strong>Ana P.</strong>
+                            <span>Membro há 4 meses</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-box reveal">
+                <div class="urgency-tag">
+                    <span>🔥</span> Vagas limitadas no grupo
+                </div>
+
+                <h2>Dê o primeiro passo<br>para sua transformação</h2>
+                <p>Não fique de fora. Entre agora no grupo e comece a cuidar da sua saúde emocional hoje mesmo.</p>
+
+                <a href="https://chat.whatsapp.com/E3fgrpfOKFk7svgbGW6gjp" class="cta-btn" onclick="trackJoinClick()">
+                    <svg class="btn-shake" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Quero Entrar Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 - Grupo de Ansiedade & Inteligência Emocional</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-cta" id="floatingCta">
+        <a href="https://chat.whatsapp.com/E3fgrpfOKFk7svgbGW6gjp" onclick="trackJoinClick()" aria-label="Entrar no grupo do WhatsApp">
+            <svg viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        // Track join click with Meta Pixel
+        function trackJoinClick() {
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+                fbq('trackCustom', 'JoinWhatsAppGroup');
+            }
+        }
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // Floating CTA visibility
+        const floatingCta = document.getElementById('floatingCta');
+        const mainCta = document.getElementById('mainCta');
+
+        const ctaObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    floatingCta.classList.add('show');
+                } else {
+                    floatingCta.classList.remove('show');
+                }
+            });
+        }, { threshold: 0 });
+
+        ctaObserver.observe(mainCta);
+    </script>
+</body>
+</html>
