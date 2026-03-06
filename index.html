@@ -851,8 +851,7 @@
         // Track join click with Meta Pixel
         function trackJoinClick() {
             if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead');
-                fbq('trackCustom', 'JoinWhatsAppGroup');
+                fbq('track', 'CompleteRegistration');
             }
         }
 
