@@ -848,15 +848,46 @@
     </div>
 
     <script>
-        // Track join click with Meta Pixel
+        // Meta Conversions API config
+        var PIXEL_ID = '4512638892346985';
+        var ACCESS_TOKEN = 'EAATzyR5yZBTEBQ2eD5PUhvXHBfzZAfZAPxXqHRYhy9DeaM21qhnUVGqwTX4MQXJv9ykfactxTAjnXIuw8Brp3HRHGg9tMG62GsHiRRer5HeO7Js3aHZCEdpsqC0gzw44TdBuakKZA2bLk31ZCU9gU7MMApPUqboGhF9T2SpmY2qJ3SzvNZAo8xU97tFADynEwZDZD';
+
+        // Send event via Conversions API
+        function sendConversionEvent(eventName) {
+            var eventData = {
+                data: [{
+                    event_name: eventName,
+                    event_time: Math.floor(Date.now() / 1000),
+                    action_source: 'website',
+                    event_source_url: window.location.href,
+                    user_data: {
+                        client_user_agent: navigator.userAgent,
+                        client_ip_address: ''
+                    }
+                }]
+            };
+
+            fetch('https://graph.facebook.com/v21.0/' + PIXEL_ID + '/events?access_token=' + ACCESS_TOKEN, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(eventData),
+                keepalive: true
+            }).catch(function() {});
+        }
+
+        // Send PageView via CAPI on page load
+        sendConversionEvent('PageView');
+
+        // Track join click with Meta Pixel + Conversions API
         function trackJoinClick(e) {
             e.preventDefault();
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Lead');
             }
+            sendConversionEvent('Lead');
             setTimeout(function() {
                 window.location.href = 'https://chat.whatsapp.com/E3fgrpfOKFk7svgbGW6gjp';
-            }, 400);
+            }, 500);
         }
 
         // Scroll reveal animation
